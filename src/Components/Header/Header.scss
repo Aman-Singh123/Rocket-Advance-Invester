@@ -1,0 +1,63 @@
+@import "../../Styles/__vars.scss";
+
+.header {
+  background-color: var(--white);
+  padding: 35px 35px 42px;
+  height: 114px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  @media (max-width: 991px) {
+    padding: 15px;
+    gap: 10px;
+  }
+  &_heading {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--dark1);
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 767px) {
+    height: 80px;
+  }
+  .ant-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+  }
+  .borderedBg {
+    border-radius: 109px;
+    background: rgba(0, 0, 0, 0.2);
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+  }
+  .notifications {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s all;
+    border-radius: 50%;
+    &:hover {
+      box-shadow: 0px 1px 14px 9px rgba(216, 47, 74, 0.28);
+      -webkit-box-shadow: 0px 1px 14px 9px rgba(216, 47, 74, 0.28);
+      -moz-box-shadow: 0px 1px 14px 9px rgba(216, 47, 74, 0.28);
+    }
+  }
+  &_right {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    @media (max-width: 991px) {
+      gap: 15px;
+    }
+  }
+}

@@ -1,0 +1,290 @@
+.fundedDealsDashboard {
+  &_btn {
+    margin-left: auto;
+    max-width: 307px;
+    width: 100%;
+
+    >div,
+    button {
+      width: 100%;
+    }
+  }
+
+  &_wrapper {
+    height: 100%;
+
+    &_head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0 30px;
+    }
+  }
+}
+
+.myDeals {
+  &_btn {
+    // margin-left: auto;
+    // max-width: 307px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &_wrapper {
+    margin-top: 16px;
+
+    @media (max-width: 991px) {
+      margin-top: 40px;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 25px;
+    }
+  }
+}
+
+.filterSection {
+  display: flex;
+  height: 70px;
+  background-color: #f9f9fb;
+  border: 1px solid #d5d5d560;
+  border-radius: 15px;
+
+  button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 23px;
+    font-size: 14px;
+    color: #202224;
+    font-weight: 400;
+
+    &:nth-child(2) {
+      border-left: 1px solid #d5d5d560;
+      border-right: 1px solid #d5d5d560;
+    }
+  }
+
+  .selectBorderedCustom .ant-select-selector,
+  .inputOuter .selectBorderedCustom,
+  .selectBorderedCustom .ant-select-selector {
+    background-color: transparent !important;
+    // min-width: 162px;
+    border: 0 !important;
+    border-radius: 0 !important;
+    min-width: 164px;
+    text-align: center;
+
+    @media (max-width: 767px) {
+      min-width: 100px;
+    }
+  }
+
+  .selectBorderedCustom,
+  .selectBorderedCustom .ant-select-selector,
+  .selectBorderedCustom .ant-select-selector .ant-select-selection-search-input {
+    height: 100% !important;
+    width: 100% !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #202224 !important;
+
+    &::placeholder {
+      color: #202224 !important;
+    }
+  }
+
+  span.ant-select-selection-placeholder {
+    color: #202224 !important;
+  }
+}
+
+.bgTrans button {
+  background-color: transparent !important;
+  border-color: var(--baseColor1) !important;
+  color: var(--baseColor1) !important;
+}
+
+.btnFilled {
+  button {
+    padding: 10px 26px !important;
+    border-radius: 14px;
+  }
+}
+
+
+.allDeals {
+  &_btn {
+    margin-left: auto;
+    max-width: 307px;
+    width: 100%;
+
+    >div,
+    button {
+      width: 100%;
+    }
+  }
+
+  &_wrapper {
+    margin-top: 30px;
+
+    @media (max-width: 991px) {
+      margin-top: 40px;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 25px;
+    }
+  }
+
+  &_loading {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #b3b3b3;
+    margin-top: 30px;
+  }
+}
+
+.desktop-only {
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .deal-card {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    overflow: hidden;
+
+    .deal-header {
+      background: #d7263d;
+      color: white;
+      padding: 12px 16px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .deal-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .field {
+        padding: 3px 0;
+
+        .field-label {
+          font-size: 12px;
+          color: #888;
+          margin-bottom: 4px;
+        }
+
+        .field-value {
+          font-size: 14px;
+          color: #222;
+          font-weight: 500;
+          margin-top: 6px;
+        }
+
+        .status-badge {
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 6px;
+          margin-top: 10px;
+
+
+          &.approved {
+            background: #d4f4d4;
+            color: #217a21;
+          }
+
+          &.rejected {
+            background: #f8d7da;
+            color: #a94442;
+          }
+
+          &.underreview {
+            background: #fff3cd;
+            color: #856404;
+          }
+
+          &.funded {
+            background: #d1e7dd;
+            color: #0f5132;
+          }
+        }
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 8px 0;
+      }
+
+      .flex-pair {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+
+        .field {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    color: #0E1C2C; // Change this to your desired paragraph color
+  }
+
+  a {
+    color: #979797; // Change this to your desired link color
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.ms-2 {
+  margin-left: 4px;
+}
+
+.mb-2 {
+  margin-bottom: 18px;
+}
+
+.textDecoration {
+  padding: 6px 16px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+}

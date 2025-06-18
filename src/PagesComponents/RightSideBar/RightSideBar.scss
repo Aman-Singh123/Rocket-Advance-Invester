@@ -1,0 +1,97 @@
+.spinner{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.fundedDealsDashboard_wrapper_table{
+  height: 100%;
+}
+.rightSideBar {
+  min-height: 100%;
+  > div:nth-child(2) {
+    padding-top: 0;
+  }
+  > div:last-child {
+    border: 0;
+  }
+  &_container {
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--borderColor);
+    padding-top: 21px;
+  }
+  &_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--dark1);
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  p.dateStyle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+
+    margin-bottom: 15px;
+    color: var(--dark1);
+    opacity: 0.3;
+    span {
+      font-size: 12px;
+    }
+  }
+  .addressStyle {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--black);
+    margin-bottom: 11px;
+  }
+}
+.textWithLink {
+  // width: calc(50% - 12px);
+  flex: 1;
+  @media (max-width: 1500px) {
+    width: 100%;
+  }
+}
+
+.viewAll {
+  cursor: pointer;
+  transition: 0.3s all;
+  &:hover {
+    color: var(--baseColor);
+  }
+}
+
+.customStyleTd {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0;
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+  span {
+    display: block;
+    color: #606060;
+    font-size: 12px;
+    font-weight: 400;
+    @media (max-width: 767px) {
+      font-size: 11px;
+    }
+  }
+}

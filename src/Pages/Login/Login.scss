@@ -1,0 +1,135 @@
+.userDetails {
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+
+  // Fix mobile gap
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 20px 150px !important;
+    box-sizing: border-box;
+  }
+
+  @media (max-width:605px) {
+    padding: 20px 70px !important;
+  }
+
+  @media (min-width:426px) and (max-width:500px) {
+    padding: 20px 45px !important;
+  }
+
+
+  @media (max-width:425px) {
+    padding: 20px 35px !important;
+
+  }
+
+  @media (max-width: 991px) {
+    padding: 40px 15px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--dark1);
+    margin-bottom: 12px;
+    text-align: center;
+
+    @media (max-width: 991px) {
+      font-size: 26px;
+    }
+
+    @media (max-width : 561px) {
+      font-size: 20px;
+      margin-top: 16px;
+    }
+
+  }
+
+  p {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--dark1);
+    margin-bottom: 46px;
+    text-align: center;
+
+    @media (max-width: 991px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+// Optional: Uncomment and use if needed
+// .linkStyle {
+//   font-size: 16px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
+//   color: var(--dark2);
+//   text-decoration: none;
+//   cursor: pointer;
+//   transition: 0.3s all;
+//   &:hover {
+//     color: var(--baseColor);
+//   }
+// }
+
+.linksWrap {
+  margin-top: 30px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #33333370;
+
+
+  @media (max-width:370px) {
+    font-size: 12px !important;
+
+  }
+
+  @media (max-width: 991px) {
+    font-size: 14px;
+  }
+
+  &.fadeText a {
+    color: inherit;
+
+    &:hover {
+      color: var(--baseColor);
+    }
+  }
+
+  a {
+    color: var(--baseColor);
+    padding-left: 5px;
+    transition: 0.3s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.styledFlexedLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+
+  @media (min-width : 320px) and (max-width : 768px) {
+    margin-bottom: 26px;
+  }
+}

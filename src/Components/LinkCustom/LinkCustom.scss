@@ -1,0 +1,32 @@
+@import "../../Styles/__vars.scss";
+.link {
+  color: $text-4CD1C6;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: right;
+  text-decoration: none;
+  margin-left: auto;
+  width: 100%;
+  position: relative;
+  &::before {
+    content: attr(data-item);
+    transition: 0.5s;
+    color: $text-white;
+    position: absolute;
+    top: 4px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}

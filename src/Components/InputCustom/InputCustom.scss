@@ -1,0 +1,42 @@
+@import "../../Styles/__vars.scss";
+.customInput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 0;
+  border: 4px solid var(--white);
+  label {
+    color: var(--labelText);
+    font-weight: 600;
+    line-height: 16px;
+    font-size: 12px;
+    @media (min-width: 1366px) {
+      white-space: nowrap;
+    }
+    // padding-left: 16px;
+  }
+  input {
+    height: 56px;
+    padding: 10px 16px;
+    background-color: var(--light4);
+    border-radius: 8px;
+    color: var(--dark1);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    border: 1px solid var(--borderColor1);
+    @media (max-width: 991px) {
+      font-size: 14px;
+      height: 40px;
+    }
+    &::placeholder {
+      color: var(--labelText);
+      opacity: 1;
+    }
+    &:is(:focus, :focus-within, :focus-visible) {
+      border-color: var(--baseColor);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

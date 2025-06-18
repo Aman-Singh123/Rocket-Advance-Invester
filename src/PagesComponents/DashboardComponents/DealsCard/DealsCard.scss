@@ -1,0 +1,394 @@
+.dealsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 230px;
+
+  @media (max-width: 768px) {
+    min-height: auto;
+  }
+
+  &_imgSec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 37px;
+
+    @media (max-width : 768px) {
+      gap: 20px !important;
+    }
+
+    &_dots {
+      cursor: pointer;
+    }
+
+    &_left {
+      width: 62px;
+      height: 62px;
+      // border-radius: 12px;
+      // background: rgba(202, 37, 67, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 465px) {
+        width: 32px;
+        height: 32px;
+      }
+
+      // padding: 10px;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    // white-space: nowrap;
+    color: var(--dark1);
+    margin: 0;
+
+    @media (min-width: 1400px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+
+    @media (max-width : 824px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 475px) {
+      font-size: 14px;
+    }
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--baseColor);
+
+    @media (min-width: 1400px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 24px;
+    }
+
+
+
+    @media (max-width: 824px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 565px) {
+      font-size: 16px;
+    }
+
+    // &.fontLg {
+    //   font-size: 42px;
+    //   @media (max-width: 991px) {
+    //     font-size: 32px;
+    //   }
+    //   @media (max-width: 767px) {
+    //     font-size: 24px;
+    //   }
+    // }
+  }
+
+  &_date {
+    padding-top: 5px;
+    // border-top: 1px solid var(--dark1);
+    // opacity: 0.3;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.36px;
+    margin-top: auto;
+    color: #606060;
+
+    @media (min-width: 1400px) {
+      font-size: 14px;
+    }
+  }
+}
+
+//DealsContainer CSS//
+.dealsContainer {
+  display: flex;
+  gap: 24px;
+
+  // flex: 1;
+
+  @media (max-width : 370px) {
+    display: block;
+  }
+
+  @media (max-width : 1200px) {
+    margin: 0 auto;
+
+  }
+} 
+
+@media (max-width : 370px) {
+  .dealsContainer_rightWrapper> :nth-child(1) {
+      margin-top: 20px;
+    }
+  
+}
+
+.dealsContainer_leftWrapper> :nth-child(2) {
+  margin-top: 20px;
+}
+
+.advanceCard {
+  display: flex;
+  // flex-direction: column;
+  gap: 24px;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.smallText {
+  color: var(--black);
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 14px;
+  margin-bottom: 0;
+
+  @media (min-width: 480px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 18px;
+  }
+
+}
+
+//small Deals card//
+
+.smallCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 25px;
+
+
+  @media (min-width : 426px) and (max-width: 568px) {
+    flex-direction: column !important;
+  }
+
+  @media (min-width : 700px) and (max-width : 756px) {
+    gap: 30px !important;
+  }
+
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    flex-direction: column !important;
+  }
+
+  @media (min-width: 991px) {
+    flex-direction: column !important;
+  }
+
+  &_container {
+    border-radius: 12px;
+    padding: 15px 11px;
+    background-color: var(--white);
+    max-width: 260px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+
+    @media (min-width : 320px) and (max-width : 370px) {
+      min-width: 260px !important;
+    }
+
+    @media (min-width : 370px) and (max-width : 410px) {
+      min-width: 136px !important;
+    }
+
+    @media (min-width : 410px) and (max-width : 450px) {
+      min-width: 160px !important;
+    }
+
+
+
+    @media (min-width : 450px) and (max-width : 525px) {
+      min-width: 155px !important;
+    }
+
+    @media (min-width : 526px) and (max-width : 572px) {
+      min-width: 210px !important;
+    }
+
+    @media (min-width : 572px) and (max-width : 612px) {
+      min-width: 240px !important;
+    }
+
+    @media (min-width : 613px) and (max-width : 650px) {
+      min-width: 260px !important;
+    }
+
+    @media (min-width : 650px) and (max-width : 700px) {
+      min-width: 280px !important;
+    }
+
+    @media (min-width : 700px) and (max-width : 756px) {
+      min-width: 300px !important;
+    }
+
+
+
+    @media (min-width : 756px) and (max-width : 768px) {
+      min-width: 333px !important;
+    }
+
+
+    @media (min-width: 768px) and (max-width: 795px) {
+      min-width: 234px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 795px) and (max-width: 825px) {
+      min-width: 247px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 826px) and (max-width: 847px) {
+      min-width: 260px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 848px) and (max-width: 877px) {
+      min-width: 272px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 878px) and (max-width: 900px) {
+      min-width: 282px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 901px) and (max-width: 940px) {
+      min-width: 302px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 941px) and (max-width: 960px) {
+      min-width: 312px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 961px) and (max-width: 976px) {
+      min-width: 322px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width: 977px) and (max-width: 991px) {
+      min-width: 332px !important;
+      max-width: 260px !important;
+    }
+
+    @media (min-width : 992px) and (max-width : 1200px) {
+      min-width: 352px !important;
+      max-width: 260px !important;
+
+    }
+
+
+
+    &_top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      // margin-bottom: 12px;
+      @media (max-width: 767px) {
+        justify-content: space-between;
+      }
+    }
+
+    &_right {
+      h3 {
+        color: #0e1c2c;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 4px;
+
+        @media (min-width: 1400px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 991px) {
+          font-size: 13px;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 12px;
+        }
+      }
+
+      h1 {
+        color: #0e1c2c;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 4px;
+
+        span {
+          font-size: 12px;
+          font-weight: 400;
+          color: #000;
+          margin-left: 5px;
+          display: inline-block;
+        }
+
+        @media (min-width: 1400px) {
+          font-size: 28px;
+        }
+
+        @media (max-width: 991px) {
+          font-size: 24px;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    &_footer {
+      font-size: 12px;
+      font-weight: 400;
+      color: #606060;
+    }
+  }
+}

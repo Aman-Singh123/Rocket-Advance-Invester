@@ -1,0 +1,18 @@
+.contactUs {
+  div {
+    margin-bottom: 14px;
+  }
+  p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--dark1);
+    margin-bottom: 12px;
+    // word-break: break-all;
+    line-height: normal;
+    &.linkText {
+      text-decoration: underline;
+      color: var(--baseColor);
+    }
+  }
+}
