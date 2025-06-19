@@ -1158,7 +1158,13 @@ button span {
 }
 
 .mobile-bottom-nav {
-  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; // make sure it's above other content
+
+  height: 60px;
   background: #ffffff;
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -1166,13 +1172,8 @@ button span {
   align-items: center;
   padding: 0 12px;
 
-  @media (min-width :548px) and (max-width : 768px) {
-    height: 100px !important;
-  }
-
-  @media (min-width : 320px) and (max-width : 548px) {
-    height: 160px;
-
+  @media (max-width: 425px) {
+    height: 70px;
   }
 }
 
