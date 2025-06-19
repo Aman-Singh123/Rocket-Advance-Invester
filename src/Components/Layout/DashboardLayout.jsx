@@ -231,7 +231,7 @@ const DashboardLayout = ({ children }) => {
             </div>
 
             <div className="mobile-main-content" style={{ paddingBottom: "100px" }}>{children}</div>
-              <div className={pathname === "/funded-deals" ? "profile-height mobile-bottom-nav " : "mobile-bottom-nav"}
+              <div className={pathname === "/funded-deals" || pathname === "/new-deals" ? "profile-height mobile-bottom-nav " : "mobile-bottom-nav"}
               
             >
               <div className=""

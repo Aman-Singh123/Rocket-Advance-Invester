@@ -50,6 +50,8 @@ export default function NewDealsComponent() {
     getNewDeals();
   }, [page]);
 
+  
+
   const renderData = (heading, subHeading) => (
     <div className="newDealsComponent_wrapper_textContainer">
       <h5>{heading}</h5>
@@ -101,6 +103,21 @@ export default function NewDealsComponent() {
                     <div>
                       <div className="deal-label">Per Day Income</div>
                       <div className="deal-value">{ele?.perDayIncomeVal}</div>
+                    </div>
+                  </div>
+                  <hr className="horizontal-line" />
+                  <div className="deal-row">
+                    <div>
+                      <div className="deal-label">Duration of days</div>
+                      <div className="deal-value">{ele?.durationDaysValue || "N/A"}</div>
+                    </div>
+                    <div>
+                      <div className="deal-label">Total income </div>
+                      <div className="deal-value">{ele?.totalIncomeValue}</div>
+                    </div>
+                    <div>
+                      <div className="deal-label">Initial investment amount</div>
+                      <div className="deal-value">{ele?.totalIncomeValue}</div>
                     </div>
                   </div>
                   <Button className="invest-btn" onClick={ele.buttonClick}>
