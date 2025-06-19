@@ -62,7 +62,7 @@ body {
 
 .mt60 {
   margin-top: 60px;
-}
+} 
 
 .height50 button {
   height: 50px !important;
@@ -93,6 +93,12 @@ body {
 
     @media (max-width: 991px) {
       padding: 10px 26px;
+      font-size: 14px;
+      height: 40px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 10px 6px;
       font-size: 14px;
       height: 40px;
     }
@@ -132,6 +138,11 @@ body {
   .selectBorderedCustom .ant-select-selector {
     height: 62px !important;
     padding-left: 30px !important;
+
+    @media (max-width:768px) {
+      padding-left: 12px !important;
+
+    }
   }
 
   .ant-select .ant-select-arrow {
@@ -1158,12 +1169,17 @@ button span {
   @media (min-width :548px) and (max-width : 768px) {
     height: 100px !important;
   }
-}
 
+  @media (min-width : 320px) and (max-width : 548px) {
+    height: 160px;
+
+  }
+}
 
 .height-mobile-bottom {
   height: 60px !important;
 }
+
 .nav-item {
   background: #fdeaea;
   padding: 4px;
@@ -1307,4 +1323,22 @@ button span {
       }
     }
   }
+}
+
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+
+  .load-more-btn {
+    color: #0E1C2C;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.profile-height {
+  height: 52px !important;
 }

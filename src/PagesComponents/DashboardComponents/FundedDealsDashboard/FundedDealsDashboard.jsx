@@ -15,6 +15,7 @@ export default function FundedDealsDashboard() {
   const [dataSource, setDataSource] = useState();
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState();
+  const [visibleCount, setVisibleCount] = useState(4);
   const columns = [
     {
       title: (
@@ -144,14 +145,18 @@ export default function FundedDealsDashboard() {
 
         {/* Mobile Accordion View */}
         <div className="mobile-deals mobile-only">
-          <div className="flex mb-2">
+          <div className="flex-delas mb-2">
             <p>Funded Deals</p>
-            <a href="funded-deals"  rel="">See All</a>
+            <a href="funded-deals" rel="">See All</a>
           </div>
-          {dataSource?.map((item, index) => (
+          {dataSource?.slice(0, visibleCount).map((item, index) => (
             <div key={index} className="deal-card">
               <div
                 className="deal-header"
+                style={{
+                  backgroundColor: item.open ? "#CA2543" : "#fff",
+                  color: item.open ? "#fff" : "#000",
+                }}
                 onClick={() =>
                   setDataSource((prev) =>
                     prev.map((deal, i) =>
@@ -160,11 +165,26 @@ export default function FundedDealsDashboard() {
                   )
                 }
               >
-                <div className="label">Agreement Number</div>
-                <div className="flex">
-                  <div className="number">{item.unique_deal_number1}</div>
-                  <div className="arrow ms-2">{item.open ? "▲" : "▼"}</div>
-                </div>
+
+                {!item.open ? (
+                  <div className="deal-collapsed">
+                    <div className="number">{item.unique_deal_number1}</div>
+                    <div className="flex">
+                      <div className={`status-badge  ${String(item.Stage).toLowerCase().replace(/\s/g, "")}`}>
+                        {renameStatus(item.Stage)}
+                      </div>
+                      <div className="arrow ms-2">▼</div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className='deal-collapsed' >
+                    <div className="label">Agreement Number</div>
+                    <div className="flex">
+                      <div className="number">{item.unique_deal_number1}</div>
+                      <div className="arrow ms-2">▲</div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {item.open && (
@@ -222,6 +242,22 @@ export default function FundedDealsDashboard() {
               )}
             </div>
           ))}
+
+          {/* Load More Button */}
+          {visibleCount < dataSource?.length && (
+            <div className="load-more-container">
+              <p
+                className="load-more-btn"
+                onClick={() => setVisibleCount((prev) => prev + 4)}
+              >
+                Load More...
+              </p>
+            </div>
+          )}
+
+
+
+
         </div>
       </div>
     </div>

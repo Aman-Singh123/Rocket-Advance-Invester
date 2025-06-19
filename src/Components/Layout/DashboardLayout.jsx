@@ -117,7 +117,7 @@ const DashboardLayout = ({ children }) => {
                 </div>
               </div>
             </div>
-            <div className="mobile-main-content">
+            <div className="mobile-main-content" >
 
               <div className="ContactUSResponsive">
                 <p style={{ fontWeight: 900 }}>Contact Us</p>
@@ -230,8 +230,10 @@ const DashboardLayout = ({ children }) => {
               </div>
             </div>
 
-            <div className="mobile-main-content">{children}</div>
-            <div className="mobile-bottom-nav">
+            <div className="mobile-main-content" style={{ paddingBottom: "100px" }}>{children}</div>
+              <div className={pathname === "/funded-deals" ? "profile-height mobile-bottom-nav " : "mobile-bottom-nav"}
+              
+            >
               <div className=""
                 onClick={() => navigate("/dashboard")}
               >
@@ -241,13 +243,13 @@ const DashboardLayout = ({ children }) => {
                 className=""
                 onClick={() => navigate("/funded-deals")}
               >
-                  {pathname === "/funded-deals" ? <ProfileIcon /> : <UserIconUnfilled />}
+                {pathname === "/funded-deals" ? <ProfileIcon /> : <UserIconUnfilled />}
               </div>
               <div
                 className=""
                 onClick={() => navigate("/new-deals")}
               >
-                  {pathname === "/new-deals" ? <NewDealsOutlined /> : <NewDeals />}
+                {pathname === "/new-deals" ? <NewDealsOutlined /> : <NewDeals />}
               </div>
             </div>
           </>

@@ -15,7 +15,7 @@
     gap: 37px;
 
     @media (max-width : 768px) {
-      gap: 20px !important;
+      gap: 30px !important;
     }
 
     &_dots {
@@ -90,7 +90,7 @@
     }
 
     @media (max-width: 565px) {
-      font-size: 16px;
+      font-size: 20px;
     }
 
     // &.fontLg {
@@ -326,10 +326,7 @@
       align-items: center;
       gap: 14px;
 
-      // margin-bottom: 12px;
-      @media (max-width: 767px) {
-        justify-content: space-between;
-      }
+      
     }
 
     &_right {
