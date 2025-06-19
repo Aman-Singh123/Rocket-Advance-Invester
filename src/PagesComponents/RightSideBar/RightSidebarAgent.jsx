@@ -57,7 +57,6 @@ export default function RightSidebarAgent() {
     getNewDeals();
   }, []);
 
-  console.log("source is ", dataSource)
 
   return (
     <>
