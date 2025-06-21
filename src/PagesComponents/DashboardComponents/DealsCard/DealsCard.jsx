@@ -28,7 +28,7 @@ export default function DealsCard(
       </div>
       {smallText && (
         <p className="smallText">
-          <span>{largeText}</span>
+          <span className="me-2" >{largeText}</span>
           {smallText}
         </p>
       )}

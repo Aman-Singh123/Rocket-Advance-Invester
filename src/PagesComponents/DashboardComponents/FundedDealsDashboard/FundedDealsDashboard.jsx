@@ -256,8 +256,6 @@ export default function FundedDealsDashboard() {
           )}
 
 
-
-
         </div>
       </div>
     </div>

@@ -219,12 +219,24 @@
 
 .horizontal-line {
   position: absolute;
-  top: 32%;
+  top: 45%;
   /* or top: -8px to go even above */
   left: 0;
   right: 0;
   height: 1px;
   background-color: #F4F4F4;
-  opacity: 0.3;
+  opacity: 0.1;
+  margin-bottom: 10px;
+}
+
+.horizontal-lineSecond {
+  position: absolute;
+  top: 24%;
+  /* or top: -8px to go even above */
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #F4F4F4;
+  opacity: 0.1;
   margin-bottom: 10px;
 }

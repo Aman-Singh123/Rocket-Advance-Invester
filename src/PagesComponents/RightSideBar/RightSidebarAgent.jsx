@@ -120,9 +120,16 @@ export default function RightSidebarAgent() {
                 <div className="deal-value">{ele?.Inv_Income_per_Day}</div>
               </div>
             </div>
-            <Button className="invest-btn" onClick={ele.buttonClick}>
+            <Button
+              className="invest-btn"
+              onClick={() =>
+                ele?.investor_investing_in_deal_form &&
+                window.open(ele.investor_investing_in_deal_form, "_blank", "width=750,height=600")
+              }
+            >
               INVEST NOW
             </Button>
+
           </div>
         ))}
 

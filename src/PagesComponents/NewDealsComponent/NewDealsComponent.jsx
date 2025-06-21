@@ -50,6 +50,8 @@ export default function NewDealsComponent() {
     getNewDeals();
   }, [page]);
 
+
+
   
 
   const renderData = (heading, subHeading) => (
@@ -91,6 +93,13 @@ export default function NewDealsComponent() {
             <div className="newDealsComponent_mobile mobile-only">
               {dataSource.map((ele, idx) => (
                 <div key={idx} className="mobile-deal-card">
+                  <div className="deal-row">
+                    <div>
+                      <div className="deal-label">Property Address</div>
+                      <div className="deal-value">{ele?.Property_Street_Address || "N/A"}</div>
+                    </div>
+                  </div>
+                  <hr className="horizontal-lineSecond" />
                   <div className="deal-row">
                     <div>
                       <div className="deal-label">Agreement Number</div>

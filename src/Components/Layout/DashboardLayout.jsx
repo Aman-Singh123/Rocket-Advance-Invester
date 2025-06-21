@@ -38,6 +38,7 @@ const DashboardLayout = ({ children }) => {
   const isActive = (path) => pathname === path;
   const [showPopup, setShowPopup] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  
 
 
   const menuItems = [
@@ -191,10 +192,14 @@ const DashboardLayout = ({ children }) => {
         ) : (
           <>
             {/* Default Mobile Layout */}
-            <div className="mobile-top-header">
+            <div
+              className="mobile-top-header"
+              
+            >
               <div className="broker-box">
                 {pathname === "/dashboard" ? <DashboardIconFill /> : pathname === "/funded-deals" ? <ProfileIcon /> : <NewDealsOutlined />}
-                <span className="broker-text">
+                  <span className="broker-text"
+                   >
                   {pathname === "/dashboard" ? "Accredited Investor" : pathname === "/funded-deals" ? "Funded Deals" : "New Deals"}
                 </span>
               </div>
@@ -231,8 +236,8 @@ const DashboardLayout = ({ children }) => {
             </div>
 
             <div className="mobile-main-content" style={{ paddingBottom: "100px" }}>{children}</div>
-              <div className={pathname === "/funded-deals" || pathname === "/new-deals" ? "profile-height mobile-bottom-nav " : "mobile-bottom-nav"}
-              
+            <div className={pathname === "/funded-deals" || pathname === "/new-deals" ? "profile-height mobile-bottom-nav " : "mobile-bottom-nav"}
+
             >
               <div className=""
                 onClick={() => navigate("/dashboard")}

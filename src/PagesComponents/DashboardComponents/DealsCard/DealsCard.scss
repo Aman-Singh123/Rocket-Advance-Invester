@@ -171,13 +171,19 @@
     font-size: 15px;
   }
 
-  @media (min-width: 768px) {
-    font-size: 16px;
-  }
+  
 
   @media (min-width: 1024px) {
     font-size: 18px;
   }
+
+    @media (max-width: 768px) {
+      span {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      font-size: 16px !important;
+    }
 
 }
 
@@ -388,4 +394,8 @@
       color: #606060;
     }
   }
+}
+
+.me-2{ 
+  margin-right: 6px;
 }
