@@ -14,7 +14,8 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export default function FundedDealsDashboard() {
-  const [dataSource, setDataSource] = useState();
+  const [allDealsData, setAllDealsData] = useState([]);
+  const [dataSource, setDataSource] = useState([]);
   const [filter, setFilter] = useState("all");
   const [total, setTotal] = useState();
   const [page, setPage] = useState(1);
@@ -82,45 +83,47 @@ export default function FundedDealsDashboard() {
   ];
 
   const getDeals = async () => {
-    const { data, total } = await makeRequest(
-      `/investor/funded-deals?filter=${filter || "all"}&page=${page}`,
-      "get",
-      "",
-      undefined,
-      navigate
-    );
+    const { data, total } = await makeRequest(`/investor/funded-deals`, "get", "", undefined, navigate);
     if (!Object.keys(data || []).length) return;
     setTotal(total);
-    const response = data.map((item, index) => ({
-      ...item,
-      key: index,
-      Closing_Date: formatDate(item?.Closing_Date) || "-",
-      Due_Date: formatDate(item?.Due_Date) || "-",
-      Date_of_Advance: formatDate(item?.Date_of_Advance) || "-",
-      Rocket_Advance_Net_Advance: `$${numberWithCommas(item?.Rocket_Advance_Net_Advance.toFixed(2)) || "-"
-        }`,
-      Property_Street_Address: (
-        <span style={{ maxWidth: 152, display: "block" }}>
-          {item?.Property_Street_Address || "-"}
-        </span>
-      ),
-      Investor_Income: `$${numberWithCommas(item.Investor_Income.toFixed(2))}`,
-      Stage: (
-        <span
-          className={`${stateClass(
-            item?.Stage
-          )} greyText textDecoration spaceNowrap`}
-        >
-          {isValue(item?.Stage) && renameStatus(item?.Stage)}
-        </span>
-      ),
-    }));
-    setDataSource(response);
+
+    const response = data.map((item, index) => {
+      const rawStage = item?.Stage; // original string
+      return {
+        ...item,
+        key: index,
+        rawStage, // 👈 Save original stage here
+        Closing_Date: formatDate(item?.Closing_Date) || "-",
+        Due_Date: formatDate(item?.Due_Date) || "-",
+        Date_of_Advance: formatDate(item?.Date_of_Advance) || "-",
+        Rocket_Advance_Net_Advance: `$${numberWithCommas(item?.Rocket_Advance_Net_Advance.toFixed(2)) || "-"}`,
+        Property_Street_Address: (
+          <span style={{ maxWidth: 152, display: "block" }}>
+            {item?.Property_Street_Address || "-"}
+          </span>
+        ),
+        Investor_Income: `$${numberWithCommas(item.Investor_Income.toFixed(2))}`,
+        Stage: (
+          <span
+            className={`${stateClass(rawStage)} greyText textDecoration spaceNowrap`}
+          >
+            {isValue(rawStage) && renameStatus(rawStage)}
+          </span>
+        ),
+      };
+    });
+    
+
+    setAllDealsData(response);
+    setDataSource(response); // Initially show all
   };
+  
 
   useEffect(() => {
     getDeals();
-  }, [filter, page]);
+  }, [page]);
+
+
 
   return (
     <div className="fundedD ealsDashboard">
@@ -134,23 +137,27 @@ export default function FundedDealsDashboard() {
             </button>
             <button>Filter By</button>
             <Select
-              className="selectBorderedCustom "
-              onChange={(e) => {
+              className="selectBorderedCustom"
+              value={filter}
+              onChange={(value) => {
                 setPage(1);
-                setFilter(e);
+                setFilter(value);
+
+                if (value === "all") {
+                  setDataSource(allDealsData);
+                } else {
+                  const filtered = allDealsData.filter((item) =>
+                    item.rawStage?.toLowerCase().includes(value)
+                  );
+                  setDataSource(filtered);
+                }
               }}
-              dropdownRender={(menu) => (
-                <div style={{ minWidth: "fit-content" }}>{menu}</div>
-              )}
-              placeholder={"All"}
               options={[
                 { value: "all", label: "All" },
-                {
-                  value: "closed",
-                  label: "Closed Deals",
-                },
+                { value: "closed", label: "Closed Deals" },
               ]}
             />
+
           </div>
         </div>
         <div className="allDeals_wrapper">
