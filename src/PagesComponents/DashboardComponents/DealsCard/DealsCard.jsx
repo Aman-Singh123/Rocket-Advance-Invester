@@ -28,8 +28,15 @@ export default function DealsCard(
       </div>
       {smallText && (
         <p className="smallText">
-          <span className="me-2" >{largeText}</span>
-          {smallText}
+          <span className="me-2">{largeText}</span>
+          {smallText === "Projection of closing deals" ? (
+            <>
+              <br />
+              <span className="projection-text">{smallText}</span>
+            </>
+          ) : (
+            smallText
+          )}
         </p>
       )}
       <h2 className={fontLg ? "fontLg" : ""}>${DealsValue}</h2>

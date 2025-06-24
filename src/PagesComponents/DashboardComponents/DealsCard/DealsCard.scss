@@ -171,19 +171,20 @@
     font-size: 15px;
   }
 
-  
+
 
   @media (min-width: 1024px) {
     font-size: 18px;
   }
 
-    @media (max-width: 768px) {
-      span {
-        font-size: 22px;
-        font-weight: 700;
-      }
-      font-size: 16px !important;
+  @media (max-width: 768px) {
+    span {
+      font-size: 22px;
+      font-weight: 700;
     }
+
+    font-size: 16px !important;
+  }
 
 }
 
@@ -239,7 +240,9 @@
 
     @media (min-width : 410px) and (max-width : 450px) {
       min-width: 160px !important;
+      padding: 18px 11px !important;
     }
+
 
 
 
@@ -396,6 +399,12 @@
   }
 }
 
-.me-2{ 
+.me-2 {
   margin-right: 6px;
+}
+
+.projection-text {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #979797 !important;
 }

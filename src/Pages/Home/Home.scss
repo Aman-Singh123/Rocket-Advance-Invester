@@ -4,10 +4,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
   // justify-content: space-between;
   @media (max-width: 1366px) {
     gap: 18px;
   }
+
   &_cards {
     background-color: var(--white);
     border: 1px solid var(--light2);
@@ -27,16 +29,20 @@
     color: var(--baseColor);
     transition: all 0.3s ease;
     cursor: pointer;
+
     svg path {
       fill: var(--baseColor);
     }
+
     &:hover {
       background-color: var(--baseColor);
       color: var(--white);
+
       svg path {
         fill: var(--white);
       }
     }
+
     @media (max-width: 575px) {
       width: 100%;
       height: auto;
@@ -51,10 +57,14 @@
     // max-width: 90%;
     max-width: 800px;
   }
+
   .home_left {
     width: 40%;
+
   }
+
   .home_right {
     width: 60%;
+
   }
 }
