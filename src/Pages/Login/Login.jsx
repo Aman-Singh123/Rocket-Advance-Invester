@@ -16,7 +16,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 export default function Login() {
   //Sates management
   const [searchParams, setSearchParams] = useSearchParams();
-  const [role, setRole] = useState(searchParams.get("role") || "Broker");
+  const [role, setRole] = useState(searchParams.get("role") || "Accredited Investor");
   const [showPassword, setShowPassword] = useState(false);
   const [userDetails, setUserDetails] = useState({
     email: '',
