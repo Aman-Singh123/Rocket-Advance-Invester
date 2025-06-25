@@ -16,7 +16,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 export default function Login() {
   //Sates management
   const [searchParams, setSearchParams] = useSearchParams();
-  const [role, setRole] = useState(searchParams.get("role") || "broker");
+  const [role, setRole] = useState(searchParams.get("role") || "Broker");
   const [showPassword, setShowPassword] = useState(false);
   const [userDetails, setUserDetails] = useState({
     email: '',
@@ -105,12 +105,12 @@ export default function Login() {
           options={[
             {
               value: 'brokerAdministrator',
-              label: 'Broker administrator',
+              label: 'Broker Administrator',
               // disabled: true,
             },
             {
               value: 'brocketOfRecord',
-              label: 'Broker of record',
+              label: 'Broker of Record',
               // disabled: true,
             },
             {
